@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BetRadar Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-block">
+          <div class="brand-mark">B</div>
+          <div>
+            <p class="eyebrow">Sports intelligence</p>
+            <h1>BetRadar Insights</h1>
+          </div>
+        </div>
+
+        <form id="search-form" class="search-bar" autocomplete="off">
+          <input
+            id="search-input"
+            type="search"
+            placeholder="Search team, league, or country..."
+            aria-label="Search team"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </header>
+
+      <main class="content-grid">
+        <aside class="sidebar">
+          <div class="panel">
+            <h2>Top matches</h2>
+            <div id="search-results" class="result-list"></div>
+          </div>
+        </aside>
+
+        <section class="main-panel">
+          <div id="team-header" class="team-header hidden"></div>
+
+          <div class="dashboard-grid">
+            <div class="panel">
+              <h3>Recent results</h3>
+              <div id="recent-results" class="results-table"></div>
+            </div>
+
+            <div class="panel">
+              <h3>Team statistics</h3>
+              <div id="team-stats" class="stat-grid"></div>
+            </div>
+          </div>
+
+          <div class="dashboard-grid lower-grid">
+            <div class="panel">
+              <h3>First vs second half</h3>
+              <div id="half-stats" class="stat-grid compact"></div>
+            </div>
+
+            <div class="panel">
+              <h3>Home and away form</h3>
+              <div id="home-away" class="stat-grid compact"></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Player stats</h3>
+            <div id="player-stats" class="player-grid"></div>
+          </div>
+
+          <div class="panel">
+            <h3>Upcoming matches & odds</h3>
+            <div id="upcoming-matches" class="match-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
